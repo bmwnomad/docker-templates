@@ -6,7 +6,6 @@
   <Network>bridge</Network>
   <MyIP/>
   <Privileged>true</Privileged>
-  <Support>https://forums.lime-technology.com/topic/60143-support-clowryms-docker-repository/?tab=comments#comment-599962</Support>
   <Overview>Docker container which runs Transmission torrent client with WebUI while connecting to OpenVPN.[br]&#xD;
 When using PIA as provider it will update Transmission hourly with assigned open port. Please read the instructions below."[br][br]&#xD;
 You must set the environment variables OPENVPN_PROVIDER, OPENVPN_USERNAME and OPENVPN_PASSWORD to provide basic connection details.[br][br]&#xD;
@@ -215,9 +214,7 @@ As you can see the variables are prefixed with TRANSMISSION_, the variable is ca
   <Config Name="OPENVPN_PROVIDER" Target="OPENVPN_PROVIDER" Default="ANONINE|ANONVPN|BLACKVPN|BTGUARD|CRYPTOSTORM|CYPHERPUNK|FREEVPN|FROOT|FROSTVPN|GIGANEWS|HIDEME|HIDEMYASS|INTEGRITYVPN|IPREDATOR|IPVANISH|IRONSOCKET|IVACY|IVPN|MULLVAD|NEWSHOSTING|NORDVPN|OVPN|PRIVADO|PERFECTPRIVACY|PIA|PRIVATEVPN|PROTONVPN|PROXPN|PROXYSH|PUREVPN|RA4W|SAFERVPN|SLICKVPN|SMARTDNSPROXY|SMARTVPN|TIGER|TORGUARD|TRUSTZONE|TUNNELBEAR|USENETSERVER|WINDSCRIBE|VPNAREA|VPNAC|VPNHT|VPNBOOK|VPNFACILE|VPNTUNNEL|VYPRVPN|" Mode="" Description="Container Variable: OPENVPN_PROVIDER" Type="Variable" Display="always" Required="false" Mask="false">PIA</Config>
   <Config Name="VPN_PORT" Target="1198" Default="" Mode="udp" Description="Container Port: 1198" Type="Port" Display="always" Required="false" Mask="false">1198</Config>
   <Config Name="LOCAL_NETWORK" Target="LOCAL_NETWORK" Default="" Mode="" Description="Container Variable: LOCAL_NETWORK" Type="Variable" Display="always" Required="false" Mask="false">192.168.0.0/24</Config>
-  <Config Name="Transmission_Username" Target="TRANSMISSION_RPC_USERNAME" Default="admin" Mode="" Description="Container Variable: RPC_USERNAME" Type="Variable" Display="always" Required="false" Mask="false">admin</Config>
-  <Config Name="Transmission_Password" Target="TRANSMISSION_RPC_PASSWORD" Default="password" Mode="" Description="Container Variable: RPC_PASSWORD" Type="Variable" Display="always" Required="false" Mask="false">password</Config>
-  <Config Name="OpenVPN_OPTIONS" Target="OPENVPN_OPTS" Default="" Mode="" Description="--inactive 3600 --ping 10 --ping-exit 60 --restart=always" Type="Variable" Display="always" Required="false" Mask="false">--inactive 3600 --ping 10 --ping-exit 60</Config>
+  <Config Name="OpenVPN_OPTIONS" Target="OPENVPN_OPTS" Default="" Mode="" Description="--inactive 3600 --ping 10 --ping-exit 60" Type="Variable" Display="always" Required="false" Mask="false">--inactive 3600 --ping 10 --ping-exit 60</Config>
   <Config Name="PUID" Target="PUID" Default="" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
   <Config Name="PGID" Target="PGID" Default="" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
   <Config Name="Download" Target="/downloads" Default="" Mode="rw" Description="Container Path: /downloads" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/T_Media/Torrent/</Config>
@@ -229,8 +226,6 @@ As you can see the variables are prefixed with TRANSMISSION_, the variable is ca
   <Config Name="TRANSMISSION_DOWNLOAD_QUEUE_SIZE" Target="TRANSMISSION_DOWNLOAD_QUEUE_SIZE" Default="10" Mode="" Description="Container Variable: TRANSMISSION_DOWNLOAD_QUEUE_SIZE" Type="Variable" Display="always" Required="false" Mask="false">15</Config>
   <Config Name="TRANSMISSION_CACHE_SIZE_MB" Target="TRANSMISSION_CACHE_SIZE_MB" Default="10" Mode="" Description="Container Variable: TRANSMISSION_CACHE_SIZE_MB" Type="Variable" Display="always" Required="false" Mask="false">10</Config>
   <Config Name="TRANSMISSION_INCOMPLETE_DIR" Target="TRANSMISSION_INCOMPLETE_DIR" Default="/downloads/incomplete" Mode="" Description="Container Variable: TRANSMISSION_INCOMPLETE_DIR" Type="Variable" Display="always" Required="false" Mask="false">/downloads/incomplete</Config>
-  <Config Name="Download" Target="/mnt/user/T_Media/Torrent/" Default="/mnt/user/T_Media/Torrent/" Mode="rw" Description="Container Path: /mnt/user/T_Media/Torrent/" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/T_Media/Torrent/</Config>
-  <Config Name="WEB_GUI" Target="TRANSMISSION_WEB_UI" Default="transmission-web-control|kettu|combustion" Mode="" Description="Web UI Options" Type="Variable" Display="always" Required="false" Mask="false">transmission-web-control</Config>
   <Config Name="GLOBAL_APPLY_PERMISSIONS" Target="GLOBAL_APPLY_PERMISSIONS" Default="true|false" Mode="" Description="Apply permsissions Globally on Transmissions files / Folders" Type="Variable" Display="always" Required="true" Mask="false">false</Config>
   <Config Name="AppData Config Path" Target="/config" Default="/mnt/cache/appdata/activ-transmissionvpn" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/cache/appdata/transmission/</Config>
 </Container>
