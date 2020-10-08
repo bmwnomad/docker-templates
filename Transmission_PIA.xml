@@ -89,21 +89,6 @@ As you can see the variables are prefixed with TRANSMISSION_, the variable is ca
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/T_Media/Torrent/</HostDir>
-      <ContainerDir>/data</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-    <Volume>
-      <HostDir>/mnt/user/T_Media/Torrent/</HostDir>
-      <ContainerDir>/downloads</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-    <Volume>
-      <HostDir>/mnt/user/T_Media/Torrent/watch/</HostDir>
-      <ContainerDir>/watch</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-    <Volume>
       <HostDir>/mnt/cache/appdata/transmission/</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
@@ -136,16 +121,6 @@ As you can see the variables are prefixed with TRANSMISSION_, the variable is ca
       <Mode/>
     </Variable>
     <Variable>
-      <Value>admin</Value>
-      <Name>TRANSMISSION_RPC_USERNAME</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value>password</Value>
-      <Name>TRANSMISSION_RPC_PASSWORD</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
       <Value>--inactive 3600 --ping 10 --ping-exit 60</Value>
       <Name>OPENVPN_OPTS</Name>
       <Mode/>
@@ -166,12 +141,7 @@ As you can see the variables are prefixed with TRANSMISSION_, the variable is ca
       <Mode/>
     </Variable>
     <Variable>
-      <Value>true</Value>
-      <Name>TRANSMISSION_RPC_AUTHENTICATION_REQUIRED</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value>1.1</Value>
+      <Value>1.0</Value>
       <Name>TRANSMISSION_RATIO_LIMIT</Name>
       <Mode/>
     </Variable>
@@ -187,18 +157,13 @@ As you can see the variables are prefixed with TRANSMISSION_, the variable is ca
       <Mode/>
     </Variable>
     <Variable>
-      <Value>10</Value>
+      <Value>64</Value>
       <Name>TRANSMISSION_CACHE_SIZE_MB</Name>
       <Mode/>
     </Variable>
     <Variable>
       <Value>/downloads/incomplete</Value>
       <Name>TRANSMISSION_INCOMPLETE_DIR</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value>false</Value>
-      <Name>GLOBAL_APPLY_PERMISSIONS</Name>
       <Mode/>
     </Variable>
   <Config Name="Host Port 1" Target="9091" Default="9091" Mode="tcp" Description="Container Port: 9091" Type="Port" Display="always" Required="true" Mask="false">9091</Config>
@@ -213,14 +178,11 @@ As you can see the variables are prefixed with TRANSMISSION_, the variable is ca
   <Config Name="PUID" Target="PUID" Default="" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
   <Config Name="PGID" Target="PGID" Default="" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
   <Config Name="Download" Target="/downloads" Default="" Mode="rw" Description="Container Path: /downloads" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/T_Media/Torrent/</Config>
-  <Config Name="Watch Folder" Target="/watch" Default="/mnt/user/T_Media/Torrent/watch/" Mode="rw" Description="Container Path: /watch" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/T_Media/Torrent/watch/</Config>
   <Config Name="Trans_Option_Download Dir" Target="TRANSMISSION_DOWNLOAD_DIR" Default="" Mode="" Description="Container Variable: TRANSMISSION_DOWNLOAD_DIR" Type="Variable" Display="always" Required="false" Mask="false">/downloads</Config>
-  <Config Name="TRANSMISSION_RPC_AUTHENTICATION_REQUIRED" Target="TRANSMISSION_RPC_AUTHENTICATION_REQUIRED" Default="true|false" Mode="" Description="Container Variable: TRANSMISSION_RPC_AUTHENTICATION_REQUIRED" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
   <Config Name="RATIO LIMIT" Target="TRANSMISSION_RATIO_LIMIT" Default="1.1" Mode="" Description="Transmission Ratio" Type="Variable" Display="always" Required="false" Mask="false">1.1</Config>
   <Config Name="RATIO_LIMIT_ENABLED" Target="TRANSMISSION_RATIO_LIMIT_ENABLED" Default="true|false" Mode="" Description="Enable Ratio Limits" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
   <Config Name="TRANSMISSION_DOWNLOAD_QUEUE_SIZE" Target="TRANSMISSION_DOWNLOAD_QUEUE_SIZE" Default="10" Mode="" Description="Container Variable: TRANSMISSION_DOWNLOAD_QUEUE_SIZE" Type="Variable" Display="always" Required="false" Mask="false">15</Config>
   <Config Name="TRANSMISSION_CACHE_SIZE_MB" Target="TRANSMISSION_CACHE_SIZE_MB" Default="10" Mode="" Description="Container Variable: TRANSMISSION_CACHE_SIZE_MB" Type="Variable" Display="always" Required="false" Mask="false">10</Config>
   <Config Name="TRANSMISSION_INCOMPLETE_DIR" Target="TRANSMISSION_INCOMPLETE_DIR" Default="/downloads/incomplete" Mode="" Description="Container Variable: TRANSMISSION_INCOMPLETE_DIR" Type="Variable" Display="always" Required="false" Mask="false">/downloads/incomplete</Config>
-  <Config Name="GLOBAL_APPLY_PERMISSIONS" Target="GLOBAL_APPLY_PERMISSIONS" Default="true|false" Mode="" Description="Apply permsissions Globally on Transmissions files / Folders" Type="Variable" Display="always" Required="true" Mask="false">false</Config>
   <Config Name="AppData Config Path" Target="/config" Default="/mnt/cache/appdata/activ-transmissionvpn" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/cache/appdata/transmission/</Config>
 </Container>
